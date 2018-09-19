@@ -1,6 +1,6 @@
 {
   "name": "electron-quick-start",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
@@ -16,6 +16,13 @@
     "tutorial",
     "demo"
   ],
+  "build": {
+	  "publish": [{
+		  "provider": "github",
+		  "owner": "alextanhongpin",
+		  "repo": "electron-updater-test"
+	  }]
+  },
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
