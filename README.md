@@ -43,3 +43,38 @@ Note: If you're using Linux Bash for Windows, [see this guide](https://www.howto
 ## License
 
 [CC0 1.0 (Public Domain)](LICENSE.md)
+
+
+## Install dependencies
+
+```bash
+$ npm install electron-builder --save-dev
+$ npm install electron-updater --save
+```
+
+```bash
+{
+    "repository": "https://github.com/UserName/RepoName",
+    "scripts": {
+        "build": "build" 
+        "ship": "build -p always"
+    }
+}
+```
+Set token:
+
+```bash
+export GH_TOKEN=${YOUR_GITHUB_TOKEN}
+```
+
+Tag release:
+
+```bash
+$ git tag -a v1.0.0 -m "first release"
+```
+
+Build:
+
+```bash
+$ npm run ship
+```
