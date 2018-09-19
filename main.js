@@ -6,7 +6,11 @@ const {autoUpdater} = require('electron-updater')
 let mainWindow
 
 function sendStatusToWindow (text) {
-  mainWindow.webContents.send('message', text)
+  try {
+    mainWindow.webContents.send('message', text)
+  } catch (error) {
+    console.log(error, text)
+  }
 }
 function createWindow () {
   // Check for updates.
@@ -58,6 +62,7 @@ autoUpdater.on('download-progress', (progressObj) => {
   logMessage = logMessage + ' (' + progressObj.transferred + '/' + progressObj.total + ')'
   sendStatusToWindow(logMessage)
 })
+
 autoUpdater.on('update-downloaded', (info) => {
   sendStatusToWindow('Update downloaded')
   autoUpdater.quitAndInstall()
