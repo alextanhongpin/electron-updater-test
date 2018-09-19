@@ -52,10 +52,6 @@ autoUpdater.on('error', (err) => {
   sendStatusToWindow('Error in auto-updater:' + err)
 })
 
-autoUpdater.on('update-available', () => {
-  sendStatusToWindow('Update available.')
-})
-
 autoUpdater.on('download-progress', (progressObj) => {
   let logMessage = 'Download speed: ' + progressObj.bytesPerSecond
   logMessage = logMessage + ' - Downloaded ' + progressObj.percent + '%'
@@ -64,7 +60,7 @@ autoUpdater.on('download-progress', (progressObj) => {
 })
 
 autoUpdater.on('update-downloaded', (info) => {
-  sendStatusToWindow('Update downloaded')
+  sendStatusToWindow('Update downloaded', info)
   autoUpdater.quitAndInstall()
 })
 
