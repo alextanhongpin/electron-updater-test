@@ -1,12 +1,14 @@
 {
   "name": "electron-quick-start",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "build",
+    "ship": "build -p always"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/alextanhongpin/electron-updater-test",
   "keywords": [
     "Electron",
     "quick",
@@ -17,7 +19,8 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^2.0.9"
+    "electron": "^2.0.9",
+    "electron-builder": "^20.28.4"
   },
   "dependencies": {
     "electron-updater": "^3.1.2"
