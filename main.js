@@ -6,6 +6,7 @@ const {autoUpdater} = require('electron-updater')
 let mainWindow
 
 function createWindow () {
+  console.log('listening to events')
   // Check for updates.
   autoUpdater.checkForUpdatesAndNotify()
 
